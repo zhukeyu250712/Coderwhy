@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      color: red;
+    }
+
+    .box {
+      color: blue;
+    }
+    #home {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- 在同一个HTML中id要不重复 -->
+  <div>我是div1</div>
+  <div class="box">我是div2</div>
+  <div id="home">我是div3</div>
+
+  <!-- calss/id的名称比较复杂 -->
+  <div class="box one"></div>
+  <div class="box-one box0-first"></div>
+  <div class="box_one box0_first"></div>
+  <!-- 大驼峰、小驼峰 -->
+  <!-- <div class="boxOne Box0First"></div> -->
+  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* home的下面的所有的span */
+    .home span {
+      color: red;
+      font-size: 30px;
+    }
+    /* .home的子代的span元素(紧挨着home的span)设置背景元素 */
+    /* 大于号 >表示直接子代 */
+    .home > span {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="home">
+    <span>啦啦啦啦啦啦</span>
+    <div class="box">
+      <p>我是p元素</p>
+      <span>呵呵呵呵呵</span>
+    </div>
+
+    <div class="content">
+      <div class="desc">
+        <p>
+          <span>哈哈哈哈哈</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 不希望被选中 -->
+  <span>嘻嘻嘻嘻</span>
+  <div>
+    <span>嘿嘿嘿</span>
+  </div>
+
+</body>
+</html>

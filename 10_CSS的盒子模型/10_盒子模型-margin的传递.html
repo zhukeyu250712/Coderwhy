@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #f00;
+
+      /* 增加border则不会传递,下面代码逐渐优化 */
+      /* border: 1px solid #000; */
+      /* border: 1px solid transparent; */
+
+      /* border: 1px solid rgba(0, 0, 0, 0);  同上面的transparent */
+      /* border: 0 solid transparent; 不能设置为0   */
+
+      /* 触发box的BFC */
+      overflow: auto;
+    }
+
+    .container {
+      width: 100px;
+      height: 100px;
+      background-color: #0f0;
+
+      /* 左右是不会传递的 */
+      /* margin-left: 30px; */
+
+      /* 传递给了box，box就相对于div设置了 */
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="container">
+
+    </div>
+  </div>
+</body>
+</html>

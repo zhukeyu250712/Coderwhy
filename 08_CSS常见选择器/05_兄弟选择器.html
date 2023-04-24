@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 设置相邻兄弟两种方式 */
+    /* 方式一 */
+    /* .box + div {
+      color: red;
+    } */
+    /* 方式二 */
+    .box + .content {
+      color: red; 
+    }
+
+    /* 设置所有兄弟 */
+    .box ~ div {
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="home">
+    <div class="box">呵呵呵呵</div>
+    <div class="content">哈哈哈哈哈哈</div>
+    <div>嘻嘻嘻嘻</div>
+    <div>嘿嘿嘿嘿</div>
+  </div>
+</body>
+</html>
