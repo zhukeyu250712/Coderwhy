@@ -752,9 +752,62 @@ margin单独编写是一个缩写属性
 </html>
 ```
 
-块级元素水平居中
+**块级元素水平居中**
 
 ![image-20230419224559807](../../../Coderwhy/pic/image-20230419224559807.png)
+
+块级元素的水平居中问题margin-auto
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+      /* inline-level box */
+      /* 行内级别：行内非替换元素span/a 行内替换元素  img input inline-block */
+      /* text-align: center; */
+    }
+
+    .container {
+      width: 800px;
+      height: 150px;
+      background-color: #0f0;
+    }
+
+    .box {
+      /*div独占一行，设置了宽度，则margin-left = 0 ，box占了width = 100px, 则将独占一行的剩余分配给margin-right*/
+      /*上面问题解决： margin-left和right设置为auto*/
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+
+      /* 块级元素block box width =width + padding + border  + margin */
+      /* display: inline-block; */
+
+      /*margin两个属性：上下是0，左右是auto*/
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
+```
+
+
+
+### 8、外轮廓 - outline
 
 
 
