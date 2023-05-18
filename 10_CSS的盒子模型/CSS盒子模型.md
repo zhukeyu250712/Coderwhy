@@ -809,6 +809,71 @@ margin单独编写是一个缩写属性
 
 ### 8、外轮廓 - outline
 
+- outline表示元素的外轮廓
+  - 不占用空间
+  - 默认显示在border的外面
+
+- outline相关属性有
+  - outline-width: 外轮廓的宽度
+  - outline-style：取值跟border的样式一样，比如solid、dotted等
+  - outline-color: 外轮廓的颜色
+  - outline：outline-width、outline-style、outline-color的简写属性，跟border用法类似
+
+- 应用实例
+  - 去除a元素、input元素的focus轮廓效果
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      
+      border: 50px solid orange;
+      padding: 30px;
+
+      /* 外轮廓 */
+      outline: 10px solid #0f0;
+    }
+
+    /* a color: red lvlha active hover 都设置，所以下面伪类也可以设置 */
+    a {
+      /* a元素是行内级元素，设置margin效果无效 */
+      margin-top: 10px;
+      display: inline-block;
+
+      /* 不添加的话，tab选中百度一下会有一个默认的外边框 */
+      outline: none;
+    }
+
+    /* 伪类 */
+    /* a::focus {
+      outline: none;
+    } */
+
+    input {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <a href="#">百度一下</a>
+
+
+  <input type="text">
+</body>
+</html>
+```
+
 
 
 ## 六、盒子和文字阴影
