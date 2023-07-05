@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+      background-color: red;
+      /* 
+      分别是x轴offset，y轴offset，模糊度，向四周增加模糊度 颜色属性 
+      insert 表示向内添加阴影
+      */
+      
+      /* box-shadow: 5px 5px 10px 10px orange inset; */
+
+      /*阴影的叠加*/
+      box-shadow: 5px 5px 10px 10px orange inset,5px 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

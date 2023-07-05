@@ -878,19 +878,474 @@ margin单独编写是一个缩写属性
 
 ## 六、盒子和文字阴影
 
+### 1、盒子阴影 – box-shadow
+
+* box-shadow属性可以设置一个或者多个阴影
+  * 每个阴影用<shadow>表示
+  * 多个阴影之间用逗号,隔开，从前到后叠加
+* <shadow>的常见格式如下
+  * <img src="../../../Coderwhy/pic/image-20230521203611438.png" alt="image-20230521203611438" style="zoom:80%;" />
+  * 第1个<length>：offset-x, 水平方向的偏移，正数往右偏移
+  * 第2个<length>：offset-y, 垂直方向的偏移，正数往下偏移
+  * 第3个<length>：blur-radius, 模糊半径
+  * 第4个<length>：spread-radius, 延伸半径
+  * <color>：阴影的颜色，如果没有设置，就跟随color属性的颜色
+  *  inset：外框阴影变成内框阴影
+* 盒子阴影 – 在线查看
+  * [查看盒子阴影连接](https://html-css-js.com/css/generator/box-shadow/)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+      background-color: red;
+      /* 
+      分别是x轴offset，y轴offset，模糊度，向四周增加模糊度 颜色属性 
+      insert 表示向内添加阴影
+      */
+      
+      /* box-shadow: 5px 5px 10px 10px orange inset; */
+
+      /*阴影的叠加*/
+      box-shadow: 5px 5px 10px 10px orange inset,5px 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
+```
+
+
+
+### 2、文字阴影 - text-shadow
+
+- text-shadow用法类似于box-shadow，用于给文字添加阴影效果
+- <shadow>的常见格式如下
+  - ![image-20230521203944375](../../../Coderwhy/pic/image-20230521203944375.png)
+  - 相当于box-shadow, 它没有spread-radius的值;
+- [我们可以通过一个网站测试文字的阴影](https://html-css-js.com/css/generator/box-shadow/)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      font-size: 50px;
+      font-weight: 700;
+
+      /*没有扩展和向内shadow*/
+      text-shadow: 5px 5px 5px orange, 10px 10px 5px blue,5px 5px 10px green;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Hello ZKYAAA</div>
+</body>
+</html>
+```
+
+
+
+### 3、行内非替换元素的特殊性
+
+- 以下属性对行内级非替换元素不起作用
+  - width、height、margin-top、margin-bottom
+
+* 以下属性对行内级非替换元素的效果比较特殊
+  * padding-top、padding-bottom、上下方向的border
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      background-color: #f00;
+      color: white;
+
+      /* 内容：width/height 不生效 */
+      width: 300px;
+      height: 300px;
+
+      /* 内边距：padding */
+      /* 特殊：上下会被撑起来，但是不占据空间 */
+      /* padding: 50px; */
+
+      /* 边框：border */
+      /* 特殊：上下会被撑起来，但是不占据空间 */
+      /* border: 50px solid orange; */
+
+      /*外边距： margin */
+      /* 特殊：上下的margin不生效 */
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <span class="content">
+    我是span内容，哈哈哈
+  </span>
+  aaaaa
+  <!-- padding的上下padding是不占空间的 -->
+  <div>
+    bbbb
+  </div>
+</body>
+</html>
+```
+
+背景和前景色设置的是哪些
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      1> 背景色有没有设置到border下面(有设置)
+      2> 前景色会在border没有设置颜色的情况下, 显示出来color颜色
+    */
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+      color: orange;
+      padding: 30px;
+      border: 10px solid;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="box"></div>
+
+</body>
+</html>
+```
+
 
 
 ## 七、box-sizing
 
+### 1、CSS属性 - box-sizing
+
+* box-sizing用来设置盒子模型中宽高的行为
+
+* content-box
+  
+  * padding、border都布置在width、height外边
+  
+* border-box
+  
+* padding、border都布置在width、height里边
+  
+* box-sizing: content-box
+  * 元素的实际占用宽度 = border + padding + width
+  * 元素的实际占用高度 = border + padding + height
+  * ![image-20230521213834303](../../../Coderwhy/pic/image-20230521213834303.png)
+  
+* box-sizing: border-box
+  * 元素的实际占用宽度 = width
+  * 元素的实际占用高度 = height 
+  * ![image-20230521213914011](../../../Coderwhy/pic/image-20230521213914011.png)
+  
+* IE盒子模型
+
+  * W3C标准盒子模型
+    * ![image-20230521214025833](../../../Coderwhy/pic/image-20230521214025833.png)
+  * IE盒子模型（IE8以下浏览器）
+    * ![image-20230521214046618](../../../Coderwhy/pic/image-20230521214046618.png)
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .box1 {
+        box-sizing : content-box;
+        width: 100px;
+        height: 100px;
+        background-color: #f00;
+  
+        padding: 30px;
+        border: 10px solid orange;
+      }
+  
+      .box2 {
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        background-color: #f00;
+  
+        padding: 30px;
+        border: 10px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+  </html>
+  ```
+
+  效果展示：
+
+  ![image-20230521214435517](../../../Coderwhy/pic/image-20230521214435517.png)
+
+  
 
 
 
+### 2、元素的水平居中方案
+
+* 在一些需求中，需要元素在父元素中水平居中显示（父元素一般都是块级元素、inline-block）
+* 行内级元素(包括inline-block元素)
+  * 水平居中：在父元素中设置text-align: center
+
+* 块级元素
+  * 水平居中：margin: 0 auto
 
 
 
+### 3、案例练习
 
+#### （1）盒子模型练习-案例01-京东按钮
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    .btn {
+       /* 先全局后局部 */
+       display: inline-block;
 
+       width: 70px;
+       height: 25px;
+       line-height: 25px;
 
+       /* 水平和垂直居中 */
+       line-height: 25px;
 
+       /* 内容居中 */
+       text-align: center;
 
+       border-radius: 13px;
+    }
+
+    /* a的样式 */
+    .new {
+      background-color: #e1251b;
+      color: #fff;
+    }
+
+    .vip {
+      background-color: #363634;
+      color: #e5d790;
+    }
+  </style>
+</head>
+<body>
+  <!-- 新人福利 -->
+  <a class="btn new" href="https://xinren.jd.com/?channel=99#/home" target="_blank">新人福利</a>
+  <a class="btn vip" href="https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fplus.jd.com%2Findex%3Fflow_system%3Dappicon%26flow_entrance%3Dappicon3%26flow_channel%3Dpc" target="_blank">PLUS会员</a>
+</body>
+</html>
+```
+
+```css
+/* a的重置 */
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+```
+
+![image-20230521221838866](../../../Coderwhy/pic/image-20230521221838866.png)
+
+#### （2）盒子模型练习-案例02-京东小米手机
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    body {
+      text-align: center;
+    }
+    
+    .item {
+      display: inline-block;
+      width: 234px;
+      height: 300px;
+      padding: 20px 10px;
+
+      text-align: center;
+      
+      background-color: #fff;
+      box-sizing: border-box;
+    }
+ 
+    .item:hover {
+      box-shadow:  0 2px 20px 5px rgba(0, 0, 0, .1)
+    }
+
+    .item img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .item .title {
+      margin-top: 14px;
+    }
+
+    .item .desc{
+      color: #999;
+      margin-top: 8px;
+
+      /* 单行显示省略号 */
+      white-space: nowrap;
+      /* 超出部分隐藏 */
+      overflow: hidden;
+      /* 三个点 */
+      text-overflow: ellipsis;
+    }
+    .item .price {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .item .new-price {
+      color: #ff6700;
+    }
+    
+    .item .old-price {
+      color: #999;
+      text-decoration: line-through;
+    }
+
+  </style>
+</head>
+<body>
+  <a class="item" href="https://www.mi.com/xiaomipad5pro" target="_blank">
+    <img src="../images/xiaomi01.webp" alt="">
+    <h3 class="title">小米平板5 Pro</h3>
+    <p class="desc">
+      全新12代英特尔处理器，CNC一体精雕工艺，2.5K 120Hz高清屏，可选MX550独立显卡
+    </p>
+    <div class="price">
+      <span class="new-price">2399元起</span>
+      <span class="old-price">2499元</span>
+    </div>
+  </a>
+</body>
+</html>
+```
+
+```css
+body, p, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  font: 12px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+/* a的重置 */
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+}
+```
+
+![image-20230521224645953](../../../Coderwhy/pic/image-20230521224645953.png)
+
+这里a已经修改为inline-block
+
+![image-20230521225343984](../../../Coderwhy/pic/image-20230521225343984.png)
+
+#### （3）水平居中的总结
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #f00;
+      text-align: center;
+    }
+
+    .box span {
+      background-color: #0f0;
+    }
+
+    .container {
+      background-color: #00f;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="box">
+    <span>我是span元素</span>
+    <div class="container"></div>
+  </div>
+
+</body>
+</html>
+```
+
+![image-20230521230101455](../../../Coderwhy/pic/image-20230521230101455.png)
