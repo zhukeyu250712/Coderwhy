@@ -1374,25 +1374,23 @@ body {
 ### （8）认识伪类
 
 * **什么是伪类呢?**
-
-  * Pseudo-classes: 翻译过来是伪类;
+* Pseudo-classes: 翻译过来是伪类;
   * 伪类是选择器的一种，它用于选择处于特定状态的元素;
-
+  
 * 比如我们经常会实现的: 当手指放在一个元素上时, 显示另外一个颜色;
 
 * **常见的伪类有**
-
-  * **1.动态伪类**（dynamic pseudo-classes）
-
-    * :link、:visited、**:hover**、:active、:focus
-
-  * **2.目标伪类**（target pseudo-classes）
-
-    * :target
-
-  * **3.语言伪类**（language pseudo-classes）
+* **1.动态伪类**（dynamic pseudo-classes）
+  
+  * :link、:visited、**:hover**、:active、:focus
+  
+* **2.目标伪类**（target pseudo-classes）
+  
+  * :target
+  
+* **3.语言伪类**（language pseudo-classes）
 * :lang( )
-    
+  
 * **4.元素状态伪类**（UI element states pseudo-classes）
   
   * :enabled、:disabled、:checked
@@ -1411,10 +1409,10 @@ body {
 
    * **动态伪类（dynamic pseudo-classes)**
         * **使用举例**
-               * a:link 未访问的链接
-               * a:visited 已访问的链接
-               * a:hover 鼠标挪动到链接上(重要)
-               * a:active 激活的链接（鼠标在链接上长按住未松开）
+               *  a:link 未访问的链接
+                   *  a:visited 已访问的链接
+                   *  a:hover 鼠标挪动到链接上(重要)
+                   *  a:active 激活的链接（鼠标在链接上长按住未松开）
      * **使用注意**
        * :hover必须放在:link和:visited后面才能完全生效
        * :active必须放在:hover后面才能完全生效
