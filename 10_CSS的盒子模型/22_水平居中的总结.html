@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #F00;
+      /* 只对行内级元素起作用，对块内元素不起作用 */
+      text-align: center;
+
+      
+      /* margin: 0 auto; */
+    }
+
+    .box span {
+      background-color: #0f0;
+    }
+
+    /* 块内级元素不起作用 */
+    .container {
+      background-color: #00f;
+      width: 10px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <span>我是span元素</span>
+    <div class="container"></div>
+  </div>
+</body>
+</html>
