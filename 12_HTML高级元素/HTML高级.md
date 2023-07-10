@@ -184,6 +184,16 @@
 
 ### 4、案例练习
 
+```
+1. 先完成结构
+2. 重置样式(body/a/ul)
+3. 先整体, 后局部
+	顺序: 按照从外往里. 从上往下
+4. 去除重复的代码(css)
+	将重复的逻辑放到一个单独的class中(.icon)
+	不同的代码抽到不同的class(.new .hot)
+```
+
 找悬浮hover技巧
 
 ![image-20230707223542249](../../../Coderwhy/pic/image-20230707223542249.png)
@@ -366,11 +376,493 @@
 
 ![image-20230707224828636](../../../Coderwhy/pic/image-20230707224828636.png)
 
+### 5、继承属性和自己属性
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      color: red !important;
+    }
+
+    /* 自己的为主要的 */
+    /* 后代元素自己有设置属性，以后代元素为标准 */
+    .container {
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    aaaa
+    <div class="container">我是container的内容</div>
+  </div>
+</body>
+</html>
+```
+
+![image-20230708191554053](../../../Coderwhy/pic/image-20230708191554053.png)
+
+
+
 ## 三、表格元素
+
+### 1、表格常见的元素
+
+* 编写表格最常见的是下面的元素:
+
+* table
+	* 表格
+
+* tr(table row)
+	* 表格中的行
+
+* td(table data)
+	* 行中的单元格
+
+* 另外表格有很多相关的属性可以设置表格的样式, 但是已经不推荐使用了
+
+![image-20230708192627033](../../../Coderwhy/pic/image-20230708192627033.png)
+
+
+
+### 2、重要属性
+
+* 这里我们需要用到一个非常重要的属性:
+	* border-collapse CSS 属性是用来决定表格的边框是分开的还是合并的。
+	* table { border-collapse: collapse; }
+	* 合并单元格的边框
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      text-align: center;
+      /* 折叠属性 */
+      border-collapse: collapse;
+    }
+
+    td {
+      /* 上下都有间距，需要折叠 */
+      border: 1px solid #333;
+      padding: 8px 16px;
+    }
+
+    table tr:nth-child(1) {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>排名</td>
+      <td>股票名称</td>
+      <td>股票代码</td>
+      <td>股票价格</td>
+      <td>股票涨跌</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>贵州茅台</td>
+      <td>600519</td>
+      <td>1800</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>腾讯控股</td>
+      <td>0700</td>
+      <td>400</td>
+      <td>3%</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>五粮液</td>
+      <td>000858</td>
+      <td>160</td>
+      <td>8%</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>东方财富</td>
+      <td>300059</td>
+      <td>25</td>
+      <td>4%</td>
+    </tr>
+  </table>
+</body>
+</html>
+```
+
+![image-20230710204311682](../../../Coderwhy/pic/image-20230710204311682.png)
+
+### 3、表格其他元素
+
+* thead
+	* 表格的表头
+
+* tbody
+	* 表格的主体
+
+* tfoot
+	* 表格的页脚
+
+* caption
+	* 表格的标题
+
+* th
+	* 表格的表头单元格
+
+![image-20230710203612392](../../../Coderwhy/pic/image-20230710203612392.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      text-align: center;
+      /* 折叠属性 */
+      border-collapse: collapse;
+    }
+
+    td, th{
+      /* 上下都有间距，需要折叠 */
+      border: 1px solid #333;
+      padding: 8px 16px;
+    }
+
+    /* table tbody tr:nth-child(1) {
+      color: red;
+      font-weight: 700;
+    } */
+
+    table thead tr:nth-child(1) {
+      color: red;
+      font-weight: 700;
+    }
+
+  </style>
+</head>
+<body>
+  <table>
+    <caption>热门股票</caption>
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>股票名称</th>
+        <th>股票代码</th>
+        <th>股票价格</th>
+        <th>股票涨跌</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>贵州茅台</td>
+        <td>600519</td>
+        <td>1800</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>腾讯控股</td>
+        <td>0700</td>
+        <td>400</td>
+        <td>3%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>五粮液</td>
+        <td>000858</td>
+        <td>160</td>
+        <td>8%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>东方财富</td>
+        <td>300059</td>
+        <td>25</td>
+        <td>4%</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>5</td>
+        <td>其他</td>
+        <td>其他</td>
+        <td>其他</td>
+        <td>其他</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
+```
+
+![image-20230710204249017](../../../Coderwhy/pic/image-20230710204249017.png)
 
 
 
 ## 四、表格元素
+
+### 1、单元格合并
+
+* 在某些特殊的情况下, 每个单元格占据的大小可能并不是固定的
+	* 一个单元格可能会跨多行或者多列来使用;
+
+* 单元格合并分成两种情况:
+	* 跨列合并 : 使用colspan
+		* 在最左边的单元格写上colspan属性, 并且省略掉合并的td;
+	* 跨行合并 : 使用rowspan
+		* 在最上面的单元格协商rowspan属性, 并且省略掉后面tr中的td;
+
+![image-20230710204709497](../../../Coderwhy/pic/image-20230710204709497.png)
+
+![image-20230710204724765](../../../Coderwhy/pic/image-20230710204724765.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    td {
+      border: 1px solid red;
+      padding: 10px 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 
+    1、确定“谁”需要跨行或者跨列
+    2、确定是跨行还是跨列
+    3、跨几行或几列
+  -->
+
+  <!-- 跨列演示 -->
+  <table>
+    <tr>
+      <td colspan="2">1-1</td>
+      <!-- 多出来需要删除 -->
+      <!-- <td>1-2</td> -->
+    </tr>
+    <tr>
+      <td>2-1</td>
+      <td>2-2</td>
+    </tr>
+  </table>
+
+  <br>
+  <table>
+    <tr>
+      <td rowspan="2">1-1</td>
+      <td>1-2</td>
+    </tr>
+    <tr>
+      <!-- <td>2-1</td> -->
+      <td>2-2</td>
+    </tr>
+  </table>
+</body>
+</html>
+```
+
+![image-20230710211945313](../../../Coderwhy/pic/image-20230710211945313.png)
+
+### 2、单元格合并练习（结构伪类）
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    /* 方式一 */
+    /* tr.head {
+      font-weight: 700;
+      font-size: 20px;
+    } */
+
+    /* 方式二 */
+    /* table tr:nth-child(1), table tr:nth-child(2) {
+      font-weight: 700;
+      font-size: 20px;
+    } */
+
+    /* 结构伪类选择器：
+    n的取值：0和整数
+    0, 1, 2, 3, 4,.... 
+    -n + a 为前 a行
+    */
+    table tr:nth-child(-n + 2) {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    table tr td[rowspan] {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    /* table tr:nth-child(-n + 2), table tr td[rowspan] {
+      font-weight: 700;
+      font-size: 20px;
+    } */
+      
+    td {
+      border: 1px solid red;
+      width: 100px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <!-- <tr class="head"> -->
+    <tr>
+      <td colspan="6">课程表</td>
+      <!-- <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td> -->
+    </tr>
+
+    <!-- <tr class="head"> -->
+    <tr>
+      <td></td>
+      <td>星期一</td>
+      <td>星期二</td>
+      <td>星期三</td>
+      <td>星期四</td>
+      <td>星期五</td>
+      
+    </tr>
+    <tr>
+      <td rowspan="4">上午</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <td rowspan="4">下午</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <td rowspan="2">晚自习</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+    <tr>
+      <!-- <td>数学</td> -->
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+      <td>数学</td>
+    </tr>
+  </table>
+
+</body>
+</html>
+```
+
+![image-20230710213917331](../../../Coderwhy/pic/image-20230710213917331.png)
+
+
 
 ## 五、表单合并
 
