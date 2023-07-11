@@ -864,6 +864,398 @@
 
 
 
-## 五、表单合并
+## 五、表单属性
 
-## 六、表单常见属性
+### 1、常见的表单元素
+
+* form
+	* 表单, 一般情况下，其他表单相关元素都是它的后代元素
+
+* input
+	* 单行文本输入框、单选框、复选框、按钮等元素
+
+* textarea
+	* 多行文本框
+
+* select、option
+	* 下拉选择框
+
+* button
+	* 按钮
+
+* label
+	* 表单元素的标题
+
+### 2、input元素使用
+
+![image-20230711163912260](../../../Coderwhy/pic/image-20230711163912260.png)
+
+[input使用链接](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 行内替换元素 -->
+  <!-- 两个框需要不同行显示，用div包裹 -->
+  <div>
+    <input type="text">
+  </div>
+  <!-- <br> -->
+  <div>
+    <input type="password">
+  </div>
+  <div>
+    <input type="time">
+  </div>
+  <div>
+    <input type="date">
+  </div>
+  <div>
+    <input type="file">
+  </div>  
+  <div>
+    <!-- 两个效果都一样 -->
+    <input type="text" readonly>
+    <input type="text" readonly="readonly">
+  </div>
+  <div>
+    <input type="text" disabled>
+  </div>
+  <div>
+    <!-- 刷新网页之后自动聚焦 -->
+    <input type="text" autofocus>
+  </div>
+</body>
+</html>
+```
+
+![image-20230711165350667](../../../Coderwhy/pic/image-20230711165350667.png)
+
+### 2、布尔属性（boolean attributes）
+
+* 常见的布尔属性有disabled、checked、readonly、multiple、autofocus、selected
+
+* 布尔属性可以没有属性值，写上属性名就代表使用这个属性
+	* 如果要给布尔属性设值，值就是属性名本身
+
+```html
+<input type="text" disabled autofocus readonly>
+  <input type="text" disabled="disabled" autofocus="autofocus" readonly="readonly">
+```
+
+### 3、表单按钮
+
+* 表单可以实现按钮效果:
+	* 普通按钮（type=button）：使用value属性设置按钮文字
+	* 重置按钮（type=reset）：重置它所属form的所有表单元素（包括input、textarea、select）
+	* 提交按钮（type=submit）：提交它所属form的表单数据给服务器（包括input、textarea、select）
+
+* 也可以通过按钮来实现，button里面的type属性有reset和submit
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>
+    <button>我是按钮</button>
+  </div>
+
+  <!-- 使用input实现按钮的效果 -->
+  <form action="">
+    <input type="text">
+    <input type="date">
+    <div>
+      <!-- 两个普通按钮实现效果完全一样 -->
+      <button>普通按钮</button>
+      <input type="button" value="普通按钮">
+    </div>
+    <!-- 可以对from中其他表单元素进行重置 -->
+    <div>
+      <input type="reset" value="重置按钮">
+      <button type="reset">重置按钮</button>
+    </div>
+
+    <!-- 对form中凄然表单元素进行提交（将数据提交给服务器） -->
+    <div>
+      <input type="submit" value="提交按钮">
+      <button type="submit">提交按钮</button>
+    </div>
+  </form>
+
+</body>
+</html>
+```
+
+### 4、input和label的关系
+
+* label元素一般跟input配合使用，用来表示input的标题
+* label可以跟某个input绑定，点击label就可以激活对应的input变成选中
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>
+    <!-- 点击用户选中后面的框 -->
+    <label for="username">
+      用户:
+    </label>
+    <input id="username" type="text">
+  </div>
+
+  <div> 
+    <!-- 一般input放在label里面 -->
+    <label for="password">
+      密码: <input id="password" type="password">
+    </label>
+  </div>
+
+</body>
+</html>
+```
+
+### 5、radio的使用
+
+* 我们可以将type类型设置为radio变成单选框:
+	* name值相同的radio才具备单选功能
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 在类型为radio的input中，如果name一样，那么两个radio就会互斥 -->
+  <form action="/abc">
+    <label for="male">
+      <input id="male" type="radio" name="sex" value="male">男
+    </label>
+    <label for="female">
+      <input id="female" type="radio" name="sex" value="female">女
+    </label>
+    <button type="submit">提交按钮</button>
+  </form>
+
+  <!-- <input type="submit" value="提交按钮"> -->
+
+</body>
+</html>
+```
+
+
+
+### 6、checkbox的使用
+
+* 我们可以将type类型设置为checkbox变成多选框:
+	* 属于同一种类型的checkbox，name值要保持一致
+
+```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <form action="/abc">
+      <div>
+        您的爱好:
+        <label for="basketball">
+          <input id="basketball" type="checkbox" checked name="hobby" value="basketball">篮球
+        </label>
+        <label for="football">
+          <input id="football" type="checkbox" name="hobby" value="football">足球
+        </label>
+      </div>
+      <input type="submit">
+    </form>
+
+  </body>
+  </html>
+```
+
+### 7、textarea的使用
+
+* textarea的常用属性:
+	* cols：列数
+	* rows：行数
+
+* 缩放的CSS设置
+	* 禁止缩放：resize: none;
+	* 水平缩放：resize: horizontal;
+	* 垂直缩放：resize: vertical;
+	* 水平垂直缩放：resize: both;
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea {
+      /* resize: horizontal; */
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <form action="">
+    <label for="info">
+      个人描述：
+      <textarea name="info" id="info" cols="30" rows="10"></textarea>
+    </label>
+  </form>
+
+</body>
+</html>
+```
+
+![image-20230711204153014](../../../Coderwhy/pic/image-20230711204153014.png)
+
+### 8、select和option的使用
+
+* option是select的子元素，一个option代表一个选项
+
+* select常用属性
+	* multiple：可以多选
+	* size：显示多少项
+
+* option常用属性
+	* selected：默认被选中
+
+```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <form action="/abc">
+      <div>
+        您的爱好:
+        <label for="basketball">
+          <input id="basketball" type="checkbox" checked name="hobby" value="basketball">篮球
+        </label>
+        <label for="football">
+          <input id="football" type="checkbox" name="hobby" value="football">足球
+        </label>
+      </div>
+      <input type="submit">
+    </form>
+
+  </body>
+  </html>
+```
+
+### 9、from常见的属性
+
+* form通常作为表单元素的父元素:
+	* form可以将整个表单作为一个整体来进行操作;
+	* 比如对整个表单进行重置;
+	* 比如对整个表单的数据进行提交;
+
+* form常见的属性如下:
+
+* action
+	* 用于提交表单数据的请求URL
+
+* method
+	* 请求方法（get和post），默认是get
+
+* target
+	* 在什么地方打开URL（参考a元素的target）
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <form action="http://hongyuancoder.com/abc" method="post" target="_blank">
+    <div>
+      <label for="username">
+        用户: <input id="username" type="text" name="username">
+      </label>
+    </div>
+    <div>
+      <label for="password">
+        密码: <input id="password" type="password" name="password">
+      </label>
+    </div>
+
+    <!-- 性别 -->
+    <div>
+      性别: 
+      <label for="male">
+        <input id="male" type="radio" name="sex" value="male">男
+      </label>
+      <label for="female">
+        <input id="female" type="radio" name="sex" value="female">女
+      </label>
+    </div>
+
+    <!-- 爱好 -->
+    <div>
+      爱好:
+      <label for="basketball">
+        <input id="basketball" type="checkbox" name="hobby" checked value="basketball">篮球
+      </label>
+      <label for="football">
+        <input id="football" type="checkbox" name="hobby" value="football">足球
+      </label>
+    </div>
+
+    <!-- 提交按钮 -->
+    <button type="reset">重置内容</button>
+    <button type="submit">提交内容</button>
+  </form>
+
+</body>
+</html>
+```
+
+![image-20230711210120295](../../../Coderwhy/pic/image-20230711210120295.png)
+

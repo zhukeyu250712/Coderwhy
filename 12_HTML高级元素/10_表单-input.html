@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 行内替换元素 -->
+  <!-- 两个框需要不同行显示，用div包裹 -->
+  <div>
+    <input type="text">
+  </div>
+  <!-- <br> -->
+  <div>
+    <input type="password">
+  </div>
+  <div>
+    <input type="time">
+  </div>
+  <div>
+    <input type="date">
+  </div>
+  <div>
+    <input type="file">
+  </div>  
+  <div>
+    <!-- 两个效果都一样 -->
+    <input type="text" readonly>
+    <input type="text" readonly="readonly">
+  </div>
+  <div>
+    <input type="text" disabled>
+  </div>
+  <div>
+    <!-- 刷新网页之后自动聚焦 -->
+    <input type="text" autofocus>
+  </div>
+  <input type="text" disabled autofocus readonly>
+  <input type="text" disabled="disabled" autofocus="autofocus" readonly="readonly">
+</body>
+</html>
