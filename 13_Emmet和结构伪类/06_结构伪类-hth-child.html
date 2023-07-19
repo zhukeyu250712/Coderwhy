@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* ul li { */
+    ul > li:nth-child(1) {
+      color: red;
+    }
+    ul li:nth-of-type(3) {
+      color: red;
+    }
+    /*0, 1, 2, ...*/
+    ul li:nth-child(2n) {
+      color: blue;
+    }
+
+    ul li:nth-child(2n+1){
+      color: green;
+    }
+
+    div > div:nth-child(4n+1) {
+      color: orange;
+    }
+
+    div > div:nth-child(4n+2) {
+      color: purple;
+    }
+    div > div:nth-child(4n+3) {
+      color: red;
+    }
+
+    /* div > div:nth-child(4n) {  */
+    div > div:nth-child(4n+4) {
+      color: green;
+    }
+
+    /* 选择前5个 */
+    div > div:nth-child(-n+5) {
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li>列表元素1</li>
+    <li>列表元素2</li>
+    <!-- nth-child(3)不能选择span -->
+    <span>1234ajkdfa</span>  
+    <li>列表元素3</li>
+    <li>列表元素4</li>
+    <li>列表元素5</li>
+    <li>列表元素6</li>
+  </ul>
+
+
+  <div>
+    <div>列表元素1</div>
+    <div>列表元素2</div>
+    <div>列表元素3</div>
+    <div>列表元素4</div>
+    <div>列表元素5</div>
+    <div>列表元素6</div>
+    <div>列表元素7</div>
+    <div>列表元素8</div>
+    <div>列表元素9</div>
+    <div>列表元素10</div>
+    <div>列表元素11</div>
+    <div>列表元素12</div>
+    <div>列表元素13</div>
+    <div>列表元素14</div>
+    <div>列表元素15</div>
+    <div>列表元素16</div>
+    <div>列表元素17</div>
+    <div>列表元素18</div>
+    <div>列表元素19</div>
+    <div>列表元素20</div>
+  </div>
+
+</body>
+</html>
