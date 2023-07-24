@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: red;
+    }
+
+     /* strong脱标了，没有box的背景颜色，不再给父元素汇报宽高数据 */
+    .box strong {
+      position:absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #0f0;
+    }
+  </style>
+
+</head>
+<body>
+  
+  <div class="box">
+    <strong>
+      <!-- 脱标元素内部默认还是按照标准流布局，strong的子元素还是按照原来的布局来 -->
+      <span>我是strong元素</span>
+      <i>我是i元素</i>
+    </strong>
+  </div>
+
+</body>
+</html>

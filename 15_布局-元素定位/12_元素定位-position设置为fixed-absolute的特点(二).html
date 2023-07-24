@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 800px;
+      height: 300px;
+      background-color: red;
+      position: relative;
+    }
+
+    /* 兼容性问题 */
+    /* 
+    red box width = green box width + left + right +margin-left+margin-right 
+    800 = auto + 0 + 0 + 0 + 0
+    */
+    .container {
+      height: 100px;
+      background-color: #0f0;
+
+      /* 800=200 + 0 + 0 + 0 + 0 width设置为200的时候*/
+      width: 200px;
+      position: absolute;
+      left: 0;
+      /* width: 100%; */
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+
+      /* 水平居中 */
+      /* margin: 0 auto; */
+    }
+  </style>
+
+</head>
+<body>
+  
+  <div class="box">
+    <div class="container"></div>
+  </div>
+
+</body>
+</html>
