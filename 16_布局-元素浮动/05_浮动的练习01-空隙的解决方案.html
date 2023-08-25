@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /*方法2：*/
+      /* font-size: 0; */
+
+      /* 方法4 */
+      display: flex;
+    }
+
+    span {
+      background-color: orange;
+      /*方法2：*/
+      /*.box的font-size设置为了0，需要重新设置*/
+      /* font-size: 16px; */
+
+      /*方法3：浮动会紧挨着*/
+      /* float: left; */
+
+      /* 如果需要空隙可以通过margin设置 */
+      /* margin-right: 5px; */
+    }
+  </style>
+
+</head>
+<body>
+
+  <!--
+    将多个行内级元素中间的空格（间隙）去除的方法
+    1.删除换行符(不推荐)
+    2.将父级元素(.box)的font-size 设置为0，但是需要子元素(span)设置回来
+    3.通过子元素(span)统一向一个方向浮动即可
+    4.flex 布局
+  -->
+
+  <div class="box">
+    <!-- 浏览器将换行解析为空格 -->
+    <!-- 方法1 -->
+    <!-- <span>aaa</span><span>bbb</span><span>ccc</span> -->
+
+    <span>aaa</span>
+    <span>bbb</span>
+    <span>ccc</span>
+  </div>
+
+</body>
+</html>

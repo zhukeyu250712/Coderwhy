@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      width: 1100px;
+      height: 800px;
+      margin: 0 auto;
+      background-color: orange;
+    }
+
+    .box {
+      border: 1px solid #000;
+      height: 168px;
+      /* border设置为1px，两边就是总共占据了2px */
+      margin-right: -2px;
+      border-right: none;
+    }
+
+    .item {
+      width: 220px;
+      height: 168px;
+
+      float: left;
+
+      border-right: 1px solid #000;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    1、方案1
+      先整个div设置：border 1px
+      后设置 item：
+        .item {
+          border-right : 1px
+        }
+    2、方案2 
+        设置所有的item border 1px
+        将最后一个item项设置: border-right: none
+    3、方案3
+        所有的item都有border
+        没有border-right:none
+   -->
+   <div class="content">
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      width: 1100px;
+      height: 800px;
+      margin: 0 auto;
+      background: #ccc;
+    }
+
+    .box {
+      /* 整体左移 */
+      /* margin-left: 1px; */
+    }
+
+
+    .item {
+      /* width: 220px; */
+      /* 
+      margin-left: -1px;
+      所以最后右边有一个空位
+      解决：将width=221px
+      */
+      width: 221px;
+      height: 168px;
+      background: orange;
+      color: #fff;
+
+      float: left;
+
+      border: 1px solid #000;
+      /* 设置负值来设置solid */
+      /* margin-left: -1px; */
+      margin-right: -1px;
+
+      box-sizing: border-box;
+    }
+
+    .item.first {
+      width: 220px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    1、方案1
+      先整个div设置：border 1px
+      后设置 item：
+        .item {
+          border-right : 1px
+        }
+    2、方案2 
+        设置所有的item border 1px
+        将最后一个item项设置: border-right: none
+    3、方案3
+        所有的item都有border
+        没有border-right:none
+   -->
+   <div class="content">
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+   </div>
+</body>
+</html>
