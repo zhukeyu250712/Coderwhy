@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 500px;
+      height: 500px;
+      background-color: orange;
+      /* padding: 0 10px; */
+      box-sizing: border-box;
+      
+      display: flex;
+      flex-wrap: wrap;
+
+      /* 切换justify-content */
+      /* flex-end：让元素和main end对齐 */
+      /* center：居中对齐 */
+
+      /* justify-content: flex-end; */
+      /* justify-content: flex-start; */
+      /* justify-content: center; */
+
+      /* space-between : 
+        flex item 之间的距离相等；
+        与main start和main end两端对齐
+        两端各放一个元素，其他多余的元素一定要空间等分
+      */
+      justify-content: space-between;
+
+      /* space-around：两端也有间距，两端的间距是items之间的间距的一半*/
+      /* justify-content: space-around; */
+
+      /* space-evenly:两端也有空隙，并且所有的空间都进行等分 */
+      /* justify-content: space-evenly; */
+
+    }
+
+    .item {
+      width: 120px;
+      height: 120px;
+      background-color: #f00;
+      /* margin-left: 20px; */
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+    <div class="item item6">6</div>
+    <div class="item item7">7</div>
+  </div>
+
+  <script src="./js/itemRandomColor.js"></script>
+
+</body>
+</html>
