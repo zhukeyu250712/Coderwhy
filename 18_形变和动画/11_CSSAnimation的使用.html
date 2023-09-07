@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: orange;
+
+      /* box 要执行moveAnim的动画 */
+      animation-delay: 2s;
+      animation-name: moveAnim;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+
+      /* 其他属性 */
+      animation-iteration-count: 3;
+      animation-direction: reverse;
+
+      /* 元素停留在动画的哪个位置，forwards表示停留在最后一个位置 */
+      animation-fill-mode: forwards;
+      /* js动态修改，点击按钮之后，触发js修改该属性暂停 */
+      /* animation-play-state: paused; */
+
+      /* 简写属性 */
+    }
+
+    @keyframes moveAnim {
+      0% {
+        transform: translate(0, 0) scale(0.5, 0.5);
+      }
+
+      /* from {
+        transform: translate(0, 0) scale(0.5, 0.5);
+      } */
+
+      33% {
+        transform: translate(0, 200px) scale(1.2, 1.2);
+      }
+
+      66% {
+        transform: translate(400px, 200px) scale(1, 1);
+      }
+
+      100% {
+        transform: translate(400px, 0) scale(0.5, 0.5);
+      }
+      /* to {
+        transform: translate(400px, 0) scale(0.5, 0.5);
+      } */
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="box"></div>
+
+</body>
+</html>

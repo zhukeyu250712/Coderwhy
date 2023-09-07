@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1、垂直居中：绝对定位  */
+    /* .container {
+      position: relative;
+      height: 300px;
+      background-color: orange;
+    } */
+
+    /* 2、垂直居中:flex 布局  */
+    /* .container {
+      display: flex;
+      align-items: center;
+
+      height: 300px;
+      background-color: orange;
+    } */
+
+    /* 3、垂直居中：top/translate */
+    .container {
+      height: 300px;
+      background-color: orange;
+    }
+
+    .box1 {
+      position: absolute;
+      width: 100px;
+      /* height: 100px; */
+      /* height: auto; */
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background-color: #f00;
+    }
+
+    .box2 {
+      background-color: #f00;
+    }
+
+    .box3 {
+      display: inline-block;
+      height: 100px;
+      background-color: #f00;
+
+      /* 方法：
+        1、让元素向下位移父元素的 50%
+        2、再让元素向上移动自身的 50% */
+
+        /* 1、让元素向下位移父元素的 50% */
+        /*这个是不对的:
+        margin-top 的百分比是相对于包含快(这里是父元素)的宽度的
+        */
+      /* margin-top: 50%;   */
+
+      position:relative;
+      /* top: 150px; 等价50% */
+      top: 50%;
+
+      /* 2、再让元素向上移动自身的 50% */
+      /* y轴相对于自身向上移动 50% */
+      transform: translate(0, -50%);
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    水平居中：
+    1、行内及元素
+      * 设置父元素的text-align: center
+    2、块级元素
+      * 设置当前块级元素(必须要有宽度) margin: 0 auto
+    3、绝对定位
+      * 元素有宽度的情况下，left:0 / right:0 / margin: 0 auto
+    4、flex
+      * justify-content:center
+   -->
+
+   <!-- 
+    垂直居中：
+    1、绝对定位
+      * 元素有高度的情况下,top:0 / bottom: 0 / margin: auto 0
+      弊端：
+        1> 必须使用定位(脱离标准流)
+        2> 必须给元素设置高度
+
+    2、垂直居中:flex布局(直接使用flex)
+      弊端：
+        1> 当前flex布局中所有的元素都会被垂直居中(aaa被垂直居中)
+        2> 相对来说兼容性差一点点(基本可以忽略)
+
+    3、垂直居中：top/translate
+      方法：
+        * 让元素向下位移父元素的 50%
+        * 再让元素向上移动自身的 50%
+      推荐，不好理解
+    -->
+
+    <!-- 1、垂直居中：绝对定位 -->
+    <!-- <div class="container">
+      <div class="box1">zky</div>
+    </div> -->
+
+    <!-- 2、垂直居中:flex 布局 -->
+    <!-- <div class="container">
+      <div class="box2">flex布局的居中</div>
+      aaa
+    </div> -->
+
+    <!-- 3、垂直居中：top/translate -->
+    <div class="container">
+      <div class="box3">zky</div>
+      aaaa
+    </div>
+</body>
+</html>

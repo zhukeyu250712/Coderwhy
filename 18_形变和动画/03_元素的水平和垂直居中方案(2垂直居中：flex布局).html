@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1、垂直居中：绝对定位  */
+    /* .container {
+      position: relative;
+      height: 300px;
+      background-color: orange;
+    } */
+
+    /* 2、垂直居中:flex 布局  */
+    .container {
+      display: flex;
+      align-items: center;
+
+      height: 300px;
+      background-color: orange;
+    }
+
+    .box1 {
+      position: absolute;
+      width: 100px;
+      /* height: 100px; */
+      /* height: auto; */
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background-color: #f00;
+    }
+
+    .box2 {
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    水平居中：
+    1、行内及元素
+      * 设置父元素的text-align: center
+    2、块级元素
+      * 设置当前块级元素(必须要有宽度) margin: 0 auto
+    3、绝对定位
+      * 元素有宽度的情况下，left:0 / right:0 / margin: 0 auto
+    4、flex
+      * justify-content:center
+   -->
+
+   <!-- 
+    垂直居中：
+    1、绝对定位
+      * 元素有高度的情况下,top:0 / bottom: 0 / margin: auto 0
+      弊端：
+        1> 必须使用定位(脱离标准流)
+        2> 必须给元素设置高度
+
+    2、垂直居中:flex 布局
+      弊端：
+        1> 当前flex布局中所有的元素都会被垂直居中(aaa被垂直居中)
+        2> 相对来说兼容性差一点点(基本可以忽略)
+    -->
+
+    <!-- 1、垂直居中：绝对定位 -->
+    <!-- <div class="container">
+      <div class="box1">zky</div>
+    </div> -->
+
+    <!-- 2、垂直居中:flex 布局 -->
+    <div class="container">
+      <div class="box2">flex布局的居中</div>
+      aaa
+    </div>
+
+</body>
+</html>
