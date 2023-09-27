@@ -49,7 +49,7 @@
 </html>
 ```
 
-![image-20230706210620316](../../../Coderwhy/pic/image-20230706210620316.png)
+![image-20230706210620316](../pic/image-20230706210620316.png)
 
 
 
@@ -63,7 +63,7 @@
 	* repeat-x：只在水平方向平铺
 	* repeat-y：只在垂直平方向平铺
 
-![image-20230706211257913](../../../Coderwhy/pic/image-20230706211257913.png)
+![image-20230706211257913](../pic/image-20230706211257913.png)
 
 ```html
 <!DOCTYPE html>
@@ -95,7 +95,7 @@
 </html>
 ```
 
-![image-20230706211237144](../../../Coderwhy/pic/image-20230706211237144.png)
+![image-20230706211237144](../pic/image-20230706211237144.png)
 
 
 
@@ -108,7 +108,7 @@
 	* percentage：百分比，相对于背景区（background positioning area）
 	* length：具体的大小，比如100px
 
-![image-20230706211431235](../../../Coderwhy/pic/image-20230706211431235.png)
+![image-20230706211431235](../pic/image-20230706211431235.png)
 
 ```html
 <!DOCTYPE html>
@@ -156,7 +156,7 @@
 	* 垂直方向还可以设值：top、center、bottom
 	* 如果只设置了1个方向，另一个方向默认是center
 
-![image-20230706212050391](../../../Coderwhy/pic/image-20230706212050391.png)
+![image-20230706212050391](../pic/image-20230706212050391.png)
 
 ```html
 <!DOCTYPE html>
@@ -289,8 +289,8 @@
 
 * background是一系列背景相关属性的简写属性
 * 常用格式是
-	![image-20230706214616581](../../../Coderwhy/pic/image-20230706214616581.png)
-* background-size可以省略，如果不省略，/background-size必须紧跟在background-position的后面
+	![image-20230706214616581](../pic/image-20230706214616581.png)
+* background-size可以省略，如果不省略，background-size必须紧跟在background-position的后面
 * 其他属性也都可以省略，而且顺序任意
 
 
@@ -299,7 +299,7 @@
 
 * 利用background-image和img都能够实现显示图片的需求，在开发中该如何选择？
 
-![image-20230706215458368](../../../Coderwhy/pic/image-20230706215458368.png)
+![image-20230706215458368](../pic/image-20230706215458368.png)
 
 * 总结
 	* img，作为网页内容的重要组成部分，比如广告图片、LOGO图片、文章配图、产品图片

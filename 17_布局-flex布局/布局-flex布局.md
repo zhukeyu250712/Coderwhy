@@ -32,7 +32,7 @@
 * flexbox在使用时, 我们最担心的是它的兼容性问题:
 	* 我们可以在caniuse上查询到具体的兼容性
 
-![image-20230829201835754](../../../Coderwhy/pic/image-20230829201835754.png)
+![image-20230829201835754](../pic/image-20230829201835754.png)
 
 
 
@@ -87,7 +87,7 @@
 </html>
 ```
 
-![image-20230829214259545](../../../Coderwhy/pic/image-20230829214259545.png)
+![image-20230829214259545](../pic/image-20230829214259545.png)
 
 ```html
 <!DOCTYPE html>
@@ -142,11 +142,11 @@
 </html>
 ```
 
-![image-20230829214329111](../../../Coderwhy/pic/image-20230829214329111.png)
+![image-20230829214329111](../pic/image-20230829214329111.png)
 
 ### 2、flex布局的模型
 
-![image-20230829202046188](../../../Coderwhy/pic/image-20230829202046188.png)
+![image-20230829202046188](../pic/image-20230829202046188.png)
 
 
 
@@ -154,7 +154,7 @@
 
 ### 1、flex相关的属性
 
-![image-20230829214020291](../../../Coderwhy/pic/image-20230829214020291.png)
+![image-20230829214020291](../pic/image-20230829214020291.png)
 
 ### 2、flex-direction
 
@@ -162,7 +162,7 @@
 	* flex-direction 决定了 main axis 的方向，有 4 个取值
 	* row（默认值）、row-reverse、column、column-reverse
 
-![image-20230829214117135](../../../Coderwhy/pic/image-20230829214117135.png)
+![image-20230829214117135](../pic/image-20230829214117135.png)
 
 ```html
 <!DOCTYPE html>
@@ -216,7 +216,7 @@
 </html>
 ```
 
-![image-20230829214721193](../../../Coderwhy/pic/image-20230829214721193.png)
+![image-20230829214721193](../pic/image-20230829214721193.png)
 
 ### 3、flex-wrap
 
@@ -225,7 +225,7 @@
 	* wrap：多行
 	* wrap-reverse：多行（对比 wrap，cross start 与 cross end 相反）
 
-![image-20230829214825493](../../../Coderwhy/pic/image-20230829214825493.png)
+![image-20230829214825493](../pic/image-20230829214825493.png)
 
 ```html
 <!DOCTYPE html>
@@ -274,14 +274,14 @@
 </html>
 ```
 
-![image-20230829220221638](../../../Coderwhy/pic/image-20230829220221638.png)
+![image-20230829220221638](../pic/image-20230829220221638.png)
 
 ### 4、flex-flow
 
 * flex-flow 属性是 flex-direction 和 flex-wrap 的简写。
 	* 顺序任何, 并且都可以省略;
 
-![image-20230829220612243](../../../Coderwhy/pic/image-20230829220612243.png)
+![image-20230829220612243](../pic/image-20230829220612243.png)
 
 ### 5、justify-content
 
@@ -300,7 +300,7 @@
 	* flex items 之间的距离相等
 	* flex items 与 main start、main end 之间的距离 等于 flex items 之间的距离
 
-![image-20230830131647544](../../../Coderwhy/pic/image-20230830131647544.png)
+![image-20230830131647544](../pic/image-20230830131647544.png)
 
 ```html
 <!DOCTYPE html>
@@ -366,7 +366,7 @@
 </html>
 ```
 
-![image-20230830131735171](../../../Coderwhy/pic/image-20230830131735171.png)
+![image-20230830131735171](../pic/image-20230830131735171.png)
 
 ### 6、align-item
 
@@ -382,7 +382,7 @@
 * center：居中对齐
 * baseline：与基准线对齐
 
-![image-20230830134556976](../../../Coderwhy/pic/image-20230830134556976.png)
+![image-20230830134556976](../pic/image-20230830134556976.png)
 
 ```html
 <!DOCTYPE html>
@@ -452,7 +452,7 @@
 </html>
 ```
 
-![image-20230830134636193](../../../Coderwhy/pic/image-20230830134636193.png)
+![image-20230830134636193](../pic/image-20230830134636193.png)
 
 ### 7、align-content
 
@@ -472,7 +472,7 @@
 	* flex items 之间的距离相等
 	* flex items 与 cross start、cross end 之间的距离 等于 flex items 之间的距离
 
-![image-20230830134930529](../../../Coderwhy/pic/image-20230830134930529.png)
+![image-20230830134930529](../pic/image-20230830134930529.png)
 
 ```html
 <!DOCTYPE html>
@@ -525,7 +525,7 @@
 </html>
 ```
 
-![image-20230830140137669](../../../Coderwhy/pic/image-20230830140137669.png)
+![image-20230830140137669](../pic/image-20230830140137669.png)
 
 
 
@@ -538,7 +538,7 @@
 * 可以设置任意整数（正整数、负整数、0），值越小就越排在前面
 * 默认值是 0
 
-![image-20230830152203179](../../../Coderwhy/pic/image-20230830152203179.png)
+![image-20230830152203179](../pic/image-20230830152203179.png)
 
 ```html
 <!DOCTYPE html>
@@ -587,7 +587,7 @@
 </html>
 ```
 
-![image-20230830152244833](../../../Coderwhy/pic/image-20230830152244833.png)
+![image-20230830152244833](../pic/image-20230830152244833.png)
 
 ### 2、align-self 
 
@@ -596,7 +596,7 @@
 * auto（默认值）：遵从 flex container 的 align-items 设置
 * stretch、flex-start、flex-end、center、baseline，效果跟 align-items 一致
 
-![image-20230830152336360](../../../Coderwhy/pic/image-20230830152336360.png)
+![image-20230830152336360](../pic/image-20230830152336360.png)
 
 ```html
 <!DOCTYPE html>
@@ -651,7 +651,7 @@
 </html>
 ```
 
-![image-20230830175323449](../../../Coderwhy/pic/image-20230830175323449.png)
+![image-20230830175323449](../pic/image-20230830175323449.png)
 
 ### 3、flex-grow
 
@@ -661,7 +661,7 @@
 * 如果所有 flex items 的 flex-grow 总和 sum 超过 1，每个 flex item 扩展的 size 为
 	* flex container 的剩余 size  *  flex-grow  /  sum
 
-![image-20230830175412837](../../../Coderwhy/pic/image-20230830175412837.png)
+![image-20230830175412837](../pic/image-20230830175412837.png)
 
 * flex items 扩展后的最终 size 不能超过 max-width \ max-height
 
@@ -709,7 +709,7 @@
 </html>
 ```
 
-![image-20230830180735874](../../../Coderwhy/pic/image-20230830180735874.png)
+![image-20230830180735874](../pic/image-20230830180735874.png)
 
 ### 4、flex-shrink
 
@@ -768,7 +768,7 @@
 </html>
 ```
 
-![image-20230830183138682](../../../Coderwhy/pic/image-20230830183138682.png)
+![image-20230830183138682](../pic/image-20230830183138682.png)
 
 ### 5、flex-basis
 
@@ -823,13 +823,13 @@
 </html>
 ```
 
-![image-20230830184320378](../../../Coderwhy/pic/image-20230830184320378.png)
+![image-20230830184320378](../pic/image-20230830184320378.png)
 
 ### 6、flex属性
 
 * flex 是 flex-grow || flex-shrink || flex-basis 的简写,flex 属性可以指定1个，2个或3个值。
 
-![image-20230830212601186](../../../Coderwhy/pic/image-20230830212601186.png)
+![image-20230830212601186](../pic/image-20230830212601186.png)
 
 * 单值语法: 值必须为以下其中之一:
 	* 一个无单位数(<number>): 它会被当作<flex-grow>的值
@@ -892,11 +892,11 @@
 </html>
 ```
 
-![image-20230830213453832](../../../Coderwhy/pic/image-20230830213453832.png)
+![image-20230830213453832](../pic/image-20230830213453832.png)
 
 ### 7、思考: 如下布局如何解决对齐问题
 
-![image-20230830213547599](../../../Coderwhy/pic/image-20230830213547599.png)
+![image-20230830213547599](../pic/image-20230830213547599.png)
 
 #### 方案1：计算每个部分
 
@@ -956,7 +956,7 @@
 </html>
 ```
 
-![image-20230830214432069](../../../Coderwhy/pic/image-20230830214432069.png)
+![image-20230830214432069](../pic/image-20230830214432069.png)
 
 #### 方案2：加的 span / i / strong / div 数目为 item列数减2
 
@@ -1026,6 +1026,6 @@
 </html>
 ```
 
-![image-20230830215416292](../../../Coderwhy/pic/image-20230830215416292.png)
+![image-20230830215416292](../pic/image-20230830215416292.png)
 
 #### 方案3：grid布局
