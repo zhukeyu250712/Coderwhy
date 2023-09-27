@@ -1,0 +1,6 @@
+/* common.css公共的样式 */
+/* warpper中包裹的区域 */
+.top_wrapper {
+  width: 980px;
+  margin: 0 auto;
+}
